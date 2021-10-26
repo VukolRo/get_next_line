@@ -6,7 +6,7 @@
 /*   By: shavok <shavok@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 20:07:35 by shavok            #+#    #+#             */
-/*   Updated: 2021/10/23 20:11:50 by shavok           ###   ########.fr       */
+/*   Updated: 2021/10/26 19:33:33 by shavok           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,11 @@
 # include <unistd.h>
 
 char	*get_next_line(int fd);
+
+void	*ft_calloc(size_t nmemb, size_t size);
+int		ft_strlen(const char *str);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strdup(char *src);
+char	*ft_strchr(const char *str, int c);
 
 #endif
