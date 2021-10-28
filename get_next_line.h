@@ -6,7 +6,7 @@
 /*   By: shavok <shavok@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 20:07:35 by shavok            #+#    #+#             */
-/*   Updated: 2021/10/26 19:33:33 by shavok           ###   ########.fr       */
+/*   Updated: 2021/10/28 12:54:45 by shavok           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h> //for "open"
+# include <stdio.h> //for printf
+
+// # ifndef BUFFER_SIZE
+// #  define BUFFER_SIZE 1
+// # elif BUFFER_SIZE < 1
+// #  undef BUFFER_SIZE
+// #  define BUFFER_SIZE 1
+// # endif
+
 
 char	*get_next_line(int fd);
 
