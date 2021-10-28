@@ -6,27 +6,25 @@
 /*   By: shavok <shavok@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 20:07:37 by shavok            #+#    #+#             */
-/*   Updated: 2021/10/26 20:34:44 by shavok           ###   ########.fr       */
+/*   Updated: 2021/10/28 16:51:06 by shavok           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
 int	ft_strlen(const char *str)
-
 {
 	int	i;
 
 	i = 0;
 	if (!str)
-		return(i);
+		return (i);
 	while (str[i] != '\0' )
 		i++;
 	return (i);
 }
 
 char	*ft_strchr(const char *str, int c)
-
 {
 	int		i;
 	char	*p;
@@ -47,26 +45,7 @@ char	*ft_strchr(const char *str, int c)
 	return (p);
 }
 
-
-void	*ft_calloc(size_t nmemb, size_t size)
-{
-	void	*buf;
-	size_t	i;
-	char	*c;
-
-	buf = (void *)malloc(nmemb * size);
-	if (buf == NULL)
-		return (NULL);
-	else
-		c = buf;
-		i = 0;
-		while (i++ < (nmemb * size))
-			c[i] = '\0';
-	return (buf);
-}
-
 char	*ft_strjoin(char const *s1, char const *s2)
-
 {
 	char	*buf;
 	int		len_1;
@@ -77,7 +56,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	len_1 = ft_strlen(s1);
 	len_2 = ft_strlen(s2);
-	buf = (char *)ft_calloc((len_1 + len_2 + 1), sizeof(char));
+	buf = (char *)malloc((len_1 + len_2 + 1) * sizeof(char));
 	if (buf)
 	{
 		i = -1;
@@ -90,6 +69,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 			len_1++;
 		}
 	}
+	buf[len_1] = '\0';
 	return (buf);
 }
 
@@ -105,11 +85,13 @@ char	*ft_strdup(char *src)
 	if (dup == NULL)
 		return (NULL);
 	else
+	{
 		while (i < ft_strlen(src))
 		{
 			dup[i] = src[i];
 			i++;
 		}
 		dup[i] = '\0';
+	}
 	return (dup);
 }
